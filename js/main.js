@@ -37,7 +37,11 @@ function handleClick(evt) {
       input = '';
       break;
     case '±':
-      input = (input.includes('-') ? '' : '-') + input;
+      if (input.includes('-')) {
+        input = input.substring(1);
+      } else {
+        input = '-' + input;
+      }
       break;
     case '÷':
       setOp(div);
